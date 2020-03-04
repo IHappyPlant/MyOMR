@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>843</width>
+                <height>632</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>XML Creator</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                    <widget class="QTabWidget" name="tabWidget">
+                        <property name="currentIndex">
+                            <number>0</number>
+                        </property>
+                        <widget class="QWidget" name="mainTab">
+                            <attribute name="title">
+                                <string>Main</string>
+                            </attribute>
+                            <layout class="QVBoxLayout" name="verticalLayout_2">
+                                <item>
+                                    <layout class="QHBoxLayout" name="horizontalLayout">
+                                        <item>
+                                            <widget class="QScrollArea" name="scrollArea">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="styleSheet">
+                                                    <string notr="true"/>
+                                                </property>
+                                                <property name="verticalScrollBarPolicy">
+                                                    <enum>Qt::ScrollBarAsNeeded</enum>
+                                                </property>
+                                                <property name="horizontalScrollBarPolicy">
+                                                    <enum>Qt::ScrollBarAsNeeded</enum>
+                                                </property>
+                                                <property name="sizeAdjustPolicy">
+                                                    <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                                                </property>
+                                                <property name="widgetResizable">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <widget class="QWidget" name="scrollAreaWidgetContents">
+                                                    <property name="geometry">
+                                                        <rect>
+                                                            <x>0</x>
+                                                            <y>0</y>
+                                                            <width>379</width>
+                                                            <height>505</height>
+                                                        </rect>
+                                                    </property>
+                                                    <widget class="QLabel" name="label">
+                                                        <property name="geometry">
+                                                            <rect>
+                                                                <x>0</x>
+                                                                <y>0</y>
+                                                                <width>381</width>
+                                                                <height>511</height>
+                                                            </rect>
+                                                        </property>
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">background-color: rgb(255, 255, 255);
+                                                            </string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string/>
+                                                        </property>
+                                                    </widget>
+                                                </widget>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QListWidget" name="images_list">
+                                                <property name="sizePolicy">
+                                                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <layout class="QGridLayout" name="gridLayout_2">
+                                                <item row="2" column="0">
+                                                    <widget class="QPushButton" name="add_to_model_button">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Add to model</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="0" column="0">
+                                                    <widget class="QLabel" name="type_label">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Object type:</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="0">
+                                                    <widget class="QComboBox" name="types_box">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <item>
+                                                            <property name="text">
+                                                                <string>unfilled checkbox</string>
+                                                            </property>
+                                                        </item>
+                                                        <item>
+                                                            <property name="text">
+                                                                <string>filled checkbox</string>
+                                                            </property>
+                                                        </item>
+                                                        <item>
+                                                            <property name="text">
+                                                                <string>checkmark</string>
+                                                            </property>
+                                                        </item>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="0">
+                                                    <widget class="QPushButton" name="folder_select_button">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Select folder</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </item>
+                                    </layout>
+                                </item>
+                                <item>
+                                    <widget class="QTextEdit" name="point_coords_output">
+                                        <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>0</width>
+                                                <height>50</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>16777215</width>
+                                                <height>50</height>
+                                            </size>
+                                        </property>
+                                        <property name="textInteractionFlags">
+                                            <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                        <widget class="QWidget" name="schema_tab">
+                            <attribute name="title">
+                                <string>Display Schema</string>
+                            </attribute>
+                            <layout class="QVBoxLayout" name="verticalLayout_3">
+                                <item>
+                                    <layout class="QHBoxLayout" name="horizontalLayout_2">
+                                        <item>
+                                            <widget class="QTextEdit" name="schema_output">
+                                                <property name="textInteractionFlags">
+                                                    <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QTreeView" name="objects_list_view">
+                                                <property name="editTriggers">
+                                                    <set>QAbstractItemView::NoEditTriggers</set>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                                <item>
+                                    <layout class="QHBoxLayout" name="horizontalLayout_3">
+                                        <item>
+                                            <widget class="QPushButton" name="save_schema_button">
+                                                <property name="text">
+                                                    <string>Save Schema</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item>
+                                            <widget class="QPushButton" name="delete_object_button">
+                                                <property name="text">
+                                                    <string>Delete object</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </widget>
+                </item>
+            </layout>
+        </widget>
+    </widget>
+    <resources/>
+    <connections/>
+    <designerdata>
+        <property name="gridDeltaX">
+            <number>10</number>
+        </property>
+        <property name="gridDeltaY">
+            <number>10</number>
+        </property>
+        <property name="gridSnapX">
+            <bool>true</bool>
+        </property>
+        <property name="gridSnapY">
+            <bool>true</bool>
+        </property>
+        <property name="gridVisible">
+            <bool>true</bool>
+        </property>
+    </designerdata>
+</ui>
