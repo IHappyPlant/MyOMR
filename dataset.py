@@ -2,6 +2,7 @@ import os
 from xml.etree import ElementTree
 
 import numpy as np
+import skimage.io
 from mrcnn.utils import Dataset
 
 
@@ -21,9 +22,6 @@ class MyDataset(Dataset):
         for filename in files:
             image_id = filename[:-4]
 
-            # if image_id in ['00090']:
-            #     continue
-
             if is_train and cnt >= int(len(files) * 0.8):
                 cnt += 1
                 continue
@@ -37,6 +35,14 @@ class MyDataset(Dataset):
             self.add_image('dataset', image_id=image_id, path=img_path,
                            annotation=ann_path)
             cnt += 1
+
+    def load_image(self, image_id):
+        """Load the specified image and return a [H,W,1] Numpy array.
+                """
+        # Load image
+        image = skimage.io.imread(self.image_info[image_id]['path'],
+                                  as_gray=True)
+        return np.expand_dims(image, 2)
 
     def load_mask(self, image_id):
         info = self.image_info[image_id]

@@ -1,0 +1,27 @@
+<annotation>
+    <folder type="str">1065dataset</folder>
+    <filename type="str">0107.jpg</filename>
+    <size type="dict">
+        <width type="int">2550</width>
+        <height type="int">3301</height>
+        <depth>3</depth>
+    </size>
+    <object type="dict">
+        <name type="str">filled checkbox</name>
+        <bndbox type="dict">
+            <xmin type="int">1089</xmin>
+            <ymin type="int">2310</ymin>
+            <xmax type="int">1127</xmax>
+            <ymax type="int">2349</ymax>
+        </bndbox>
+    </object>
+    <object type="dict">
+        <name type="str">unfilled checkbox</name>
+        <bndbox type="dict">
+            <xmin type="int">1358</xmin>
+            <ymin type="int">2310</ymin>
+            <xmax type="int">1397</xmax>
+            <ymax type="int">2349</ymax>
+        </bndbox>
+    </object>
+</annotation>

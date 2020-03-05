@@ -1,8 +1,8 @@
 import os
 from xml.etree import ElementTree
-from PIL import Image, ImageOps
-import numpy as np
+
 import cv2
+from PIL import Image
 
 
 def preprocess(images_dir, annots_dir):
@@ -35,6 +35,7 @@ def update_xml(path_to_xml, ratio, path_to_output):
         size.find('width').text = str(int(int(txt) * ratio))
         txt = size.find('height').text
         size.find('height').text = str(int(int(txt) * ratio))
+        size.find('depth').text = str(1)
 
     for box in root.iter('bndbox'):
         txt = box.find('xmin').text
@@ -52,47 +53,19 @@ def update_xml(path_to_xml, ratio, path_to_output):
 
 def binarize_img(path_to_img, path_to_output='binarized.jpg', threshold=128,
                  max_val=255):
-    im = np.array(Image.open(path_to_img).convert('L'))
-    binarized = max_val * (im > threshold)
-    im = Image.fromarray(np.uint8(binarized))
-    im.save(path_to_output)
+    im = cv2.imread(path_to_img, 2)
+    ret, bw_img = cv2.threshold(im, threshold, max_val, cv2.THRESH_BINARY)
+    cv2.imwrite(path_to_output, bw_img)
 
-
-# im_pth = '6u1iIsMjrKQ.jpg'
-# im = cv2.imread(im_pth, 2)
-# ret, bw_img = cv2.threshold(im, 128, 255, cv2.THRESH_BINARY)
-# binarize_img(im_pth)
-# cv2.imshow("Binary Image",bw_img)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
-
-
-# desired_size = 512
-# im_pth = '1065dataset/images/0000.jpg'
-#
-# im = Image.open(im_pth)
-# old_size = im.size
-# print(old_size)
-# ratio = float(desired_size) / max(old_size)
-# print(ratio)
-# new_size = tuple([int(x*ratio) for x in old_size])
-#
-#
-# im = im.resize(new_size, Image.ANTIALIAS)
-# print(im.size)
-# im.save('test.jpg')
-# new_im = Image.new('RGB', (desired_size, desired_size))
-# new_im.paste(im, ((desired_size-new_size[0])//2, (desired_size-new_size[1])//2))
-# new_im.show()
 
 # if __name__ == '__main__':
-#     preprocess('1065dataset/images', '1065dataset/annots')
+#     preprocess('1065dataset/images_binarized', '1065dataset/annots_tmp')
 
-images_dir = '1065dataset/images_resized'
+images_dir = '1065dataset/images_orig'
 imgs = [file for file in os.listdir(images_dir)
         if file.endswith('.jpg')]
 imgs = list(sorted([file.split('.')[0] for file in imgs],
-                       key=lambda x: int(x)))
+                   key=lambda x: int(x)))
 for i in range(len(imgs)):
     im_pth = os.path.join(images_dir, imgs[i] + '.jpg')
     binarize_img(im_pth, '/home/alex/Documents/PyCharmProjects/1065dataset/'

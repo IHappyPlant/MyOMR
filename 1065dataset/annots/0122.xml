@@ -2,125 +2,125 @@
     <folder type="str">1065dataset</folder>
     <filename type="str">0122.jpg</filename>
     <size type="dict">
-        <width type="int">2550</width>
-        <height type="int">3301</height>
+        <width type="int">395</width>
+        <height type="int">512</height>
         <depth>3</depth>
     </size>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2239</xmin>
-            <ymin type="int">402</ymin>
-            <xmax type="int">2277</xmax>
-            <ymax type="int">441</ymax>
+            <xmin type="int">347</xmin>
+            <ymin type="int">62</ymin>
+            <xmax type="int">353</xmax>
+            <ymax type="int">68</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">unfilled checkbox</name>
         <bndbox type="dict">
-            <xmin type="int">2144</xmin>
-            <ymin type="int">549</ymin>
-            <xmax type="int">2191</xmax>
-            <ymax type="int">593</ymax>
+            <xmin type="int">332</xmin>
+            <ymin type="int">85</ymin>
+            <xmax type="int">339</xmax>
+            <ymax type="int">91</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2239</xmin>
-            <ymin type="int">657</ymin>
-            <xmax type="int">2272</xmax>
-            <ymax type="int">684</ymax>
+            <xmin type="int">347</xmin>
+            <ymin type="int">101</ymin>
+            <xmax type="int">352</xmax>
+            <ymax type="int">106</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2335</xmin>
-            <ymin type="int">903</ymin>
-            <xmax type="int">2366</xmax>
-            <ymax type="int">936</ymax>
+            <xmin type="int">362</xmin>
+            <ymin type="int">140</ymin>
+            <xmax type="int">366</xmax>
+            <ymax type="int">145</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2236</xmin>
-            <ymin type="int">1051</ymin>
-            <xmax type="int">2281</xmax>
-            <ymax type="int">1089</ymax>
+            <xmin type="int">346</xmin>
+            <ymin type="int">163</ymin>
+            <xmax type="int">353</xmax>
+            <ymax type="int">168</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2240</xmin>
-            <ymin type="int">1105</ymin>
-            <xmax type="int">2285</xmax>
-            <ymax type="int">1143</ymax>
+            <xmin type="int">347</xmin>
+            <ymin type="int">171</ymin>
+            <xmax type="int">354</xmax>
+            <ymax type="int">177</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2326</xmin>
-            <ymin type="int">1356</ymin>
-            <xmax type="int">2368</xmax>
-            <ymax type="int">1396</ymax>
+            <xmin type="int">360</xmin>
+            <ymin type="int">210</ymin>
+            <xmax type="int">367</xmax>
+            <ymax type="int">216</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2230</xmin>
-            <ymin type="int">1455</ymin>
-            <xmax type="int">2272</xmax>
-            <ymax type="int">1499</ymax>
+            <xmin type="int">345</xmin>
+            <ymin type="int">225</ymin>
+            <xmax type="int">352</xmax>
+            <ymax type="int">232</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2237</xmin>
-            <ymin type="int">1511</ymin>
-            <xmax type="int">2275</xmax>
-            <ymax type="int">1544</ymax>
+            <xmin type="int">346</xmin>
+            <ymin type="int">234</ymin>
+            <xmax type="int">352</xmax>
+            <ymax type="int">239</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2245</xmin>
-            <ymin type="int">1804</ymin>
-            <xmax type="int">2284</xmax>
-            <ymax type="int">1829</ymax>
+            <xmin type="int">348</xmin>
+            <ymin type="int">279</ymin>
+            <xmax type="int">354</xmax>
+            <ymax type="int">283</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2328</xmin>
-            <ymin type="int">2155</ymin>
-            <xmax type="int">2361</xmax>
-            <ymax type="int">2197</ymax>
+            <xmin type="int">361</xmin>
+            <ymin type="int">334</ymin>
+            <xmax type="int">366</xmax>
+            <ymax type="int">340</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2334</xmin>
-            <ymin type="int">2760</ymin>
-            <xmax type="int">2377</xmax>
-            <ymax type="int">2798</ymax>
+            <xmin type="int">362</xmin>
+            <ymin type="int">428</ymin>
+            <xmax type="int">368</xmax>
+            <ymax type="int">433</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">checkmark</name>
         <bndbox type="dict">
-            <xmin type="int">2324</xmin>
-            <ymin type="int">3003</ymin>
-            <xmax type="int">2366</xmax>
-            <ymax type="int">3037</ymax>
+            <xmin type="int">360</xmin>
+            <ymin type="int">465</ymin>
+            <xmax type="int">366</xmax>
+            <ymax type="int">471</ymax>
         </bndbox>
     </object>
 </annotation>

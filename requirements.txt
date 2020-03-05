@@ -1,0 +1,9 @@
+dicttoxml
+PyQt5
+pdf2image
+matplotlib
+cv2
+PIL
+numpy
+scikit-image
+mrcnn

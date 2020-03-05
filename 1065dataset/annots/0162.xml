@@ -2,26 +2,26 @@
     <folder type="str">1065dataset</folder>
     <filename type="str">0162.jpg</filename>
     <size type="dict">
-        <width type="int">1275</width>
-        <height type="int">1650</height>
+        <width type="int">395</width>
+        <height type="int">512</height>
         <depth>3</depth>
     </size>
     <object type="dict">
         <name type="str">unfilled checkbox</name>
         <bndbox type="dict">
-            <xmin type="int">541</xmin>
-            <ymin type="int">1151</ymin>
-            <xmax type="int">565</xmax>
-            <ymax type="int">1175</ymax>
+            <xmin type="int">167</xmin>
+            <ymin type="int">357</ymin>
+            <xmax type="int">175</xmax>
+            <ymax type="int">364</ymax>
         </bndbox>
     </object>
     <object type="dict">
         <name type="str">filled checkbox</name>
         <bndbox type="dict">
-            <xmin type="int">676</xmin>
-            <ymin type="int">1153</ymin>
-            <xmax type="int">699</xmax>
-            <ymax type="int">1174</ymax>
+            <xmin type="int">209</xmin>
+            <ymin type="int">357</ymin>
+            <xmax type="int">216</xmax>
+            <ymax type="int">364</ymax>
         </bndbox>
     </object>
 </annotation>
