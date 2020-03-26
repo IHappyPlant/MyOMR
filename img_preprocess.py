@@ -5,7 +5,7 @@ import cv2
 from PIL import Image
 
 
-def preprocess(images_dir, annots_dir):
+def preprocess(images_dir, annots_dir, desired_size=512):
     imgs = [file for file in os.listdir(images_dir) if file.endswith('.jpg')]
     imgs = list(sorted([file.split('.')[0] for file in imgs],
                        key=lambda x: int(x)))
@@ -15,7 +15,6 @@ def preprocess(images_dir, annots_dir):
     for i in range(len(imgs)):
         im_pth = os.path.join(images_dir, imgs[i] + '.jpg')
         annot_pth = os.path.join(annots_dir, annots[i] + '.xml')
-        desired_size = 512
         im = Image.open(im_pth)
         old_size = im.size
         ratio = float(desired_size) / max(old_size)
@@ -25,6 +24,16 @@ def preprocess(images_dir, annots_dir):
 
         update_xml(annot_pth, ratio, annots_dir + '/resized/' + annots[i] +
                    '.xml')
+
+
+def resize_image(im_pth, size=512):
+    im = Image.open(im_pth)
+    old_size = im.size
+    ratio = float(size) / max(old_size)
+    new_size = tuple([int(x * ratio) for x in old_size])
+    im = im.resize(new_size, Image.ANTIALIAS)
+    img_name = im_pth.split('.')[0]
+    im.save(img_name + '_resized.jpg')
 
 
 def update_xml(path_to_xml, ratio, path_to_output):
@@ -59,14 +68,15 @@ def binarize_img(path_to_img, path_to_output='binarized.jpg', threshold=128,
 
 
 # if __name__ == '__main__':
-#     preprocess('1065dataset/images_binarized', '1065dataset/annots_tmp')
-
-images_dir = '1065dataset/images_orig'
-imgs = [file for file in os.listdir(images_dir)
-        if file.endswith('.jpg')]
-imgs = list(sorted([file.split('.')[0] for file in imgs],
-                   key=lambda x: int(x)))
-for i in range(len(imgs)):
-    im_pth = os.path.join(images_dir, imgs[i] + '.jpg')
-    binarize_img(im_pth, '/home/alex/Documents/PyCharmProjects/1065dataset/'
-                         'images/' + str(imgs[i]) + '.jpg', 164, 255)
+#     preprocess('1065dataset/changed', '1065dataset/annots_new')
+#
+# images_dir = '1065dataset/changed'
+# imgs = [file for file in os.listdir(images_dir)
+#         if file.endswith('.jpg')]
+# imgs = list(sorted([file.split('.')[0] for file in imgs],
+#                    key=lambda x: int(x)))
+# for i in range(len(imgs)):
+#     im_pth = os.path.join(images_dir, imgs[i] + '.jpg')
+#     binarize_img(im_pth, '/home/alex/Documents/PyCharmProjects/MyOMR/'
+#                          '1065dataset/changed/binarized/' + str(imgs[i]) +
+#                  '.jpg', 164, 255)

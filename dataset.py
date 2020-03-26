@@ -1,4 +1,5 @@
 import os
+import random
 from xml.etree import ElementTree
 
 import numpy as np
@@ -18,6 +19,7 @@ class MyDataset(Dataset):
         images_dir = dataset_dir + '/images/'
         annotations_dir = dataset_dir + '/annots/'
         files = os.listdir(images_dir)
+        random.shuffle(files)
         cnt = 0
         for filename in files:
             image_id = filename[:-4]

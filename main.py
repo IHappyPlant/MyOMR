@@ -1,13 +1,15 @@
 import cv2
 import numpy as np
+import skimage.io
 from matplotlib import pyplot
 from matplotlib.patches import Rectangle
 from mrcnn.model import MaskRCNN
 from mrcnn.model import mold_image
 
 import scoring
-from config import TrainConfig, PredictConfig
+from omr_configs import TrainConfig, PredictConfig
 from dataset import MyDataset
+from img_preprocess import binarize_img
 
 
 def image_info_from_annot(dataset_image_info, class_names):
@@ -94,24 +96,39 @@ test_set.load_dataset('1065dataset', is_train=False)
 test_set.prepare()
 print('Test: %d' % len(test_set.image_ids))
 
-cfg = TrainConfig()
-model = MaskRCNN(mode='training', model_dir='./', config=cfg)
-model.load_weights('mask_rcnn_coco.h5', by_name=True, exclude=[
-    'conv1', "mrcnn_class_logits", "mrcnn_bbox_fc", "mrcnn_bbox", "mrcnn_mask"])
-model.train(train_set, test_set, learning_rate=cfg.LEARNING_RATE, epochs=10,
-            layers=r"conv1|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)")
+# cfg = TrainConfig()
+# model = MaskRCNN(mode='training', model_dir='./', config=cfg)
+# model.load_weights('mask_rcnn_coco.h5', by_name=True, exclude=[
+#     'conv1', "mrcnn_class_logits", "mrcnn_bbox_fc", "mrcnn_bbox", "mrcnn_mask"])
+# model.train(train_set, test_set, learning_rate=cfg.LEARNING_RATE, epochs=50,
+#             layers=r"conv1|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)")
 
-# cfg = PredictConfig()
-# model = MaskRCNN('inference', model_dir='./', config=cfg)
-# model.load_weights('mask_rcnn_coco.h5', by_name=True)
+cfg = PredictConfig()
+model = MaskRCNN('inference', model_dir='./', config=cfg)
+model.load_weights('mask_rcnn_1065_cfg_0010.h5', by_name=True)
 #
-# path_to_sample = '1065dataset/images/0000.jpg'
+path_to_sample = '1065dataset/1.jpg'
+# binarize_img(path_to_sample, '1065dataset/0000.jpg', 164, 255)
 # path_to_annot = '1065dataset/annots/0000.xml'
 # img_info = get_image_info_by_id(train_set, 0)
 # groundturh_img = image_info_from_annot(img_info, train_set.class_names)
+sample = skimage.io.imread(path_to_sample, as_gray=True)
+sample1 = cv2.imread(path_to_sample, 2)
+image = np.copy(sample)
+sample = np.expand_dims(sample, 2)
 # sample = cv2.imread(path_to_sample)
 # image = np.copy(sample)
-# scaled_image = mold_image(sample, cfg)
-# sample = np.expand_dims(scaled_image, 0)
-# predict_and_display(image, sample, model)
+scaled_image = mold_image(sample, cfg)
+sample = np.expand_dims(scaled_image, 0)
+predict_and_display(image, sample, model)
 # test(train_set, model, cfg)
+
+
+# from PIL import Image
+# desired_size = 512
+# im = Image.open(path_to_sample)
+# old_size = im.size
+# ratio = float(desired_size) / max(old_size)
+# new_size = tuple([int(x * ratio) for x in old_size])
+# im = im.resize(new_size, Image.ANTIALIAS)
+# im.save('1065dataset/0000.jpg')
